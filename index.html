@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Case Oppgave</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>  Gjennomsnittlig kvadratmeterpris <b> Landsdeler </b>  og <b> Større byer </b></p>
+      
+      <!-- Dropdown for å velge diagram -->
+      <label for="chartTypeSelect"> <b> Velg diagramtype: </b></label>
+      <select id="chartTypeSelect">
+        <option value="bar">Stolpediagram (Bar)</option>
+        <option value="pie">Kakediagram (Pie)</option>
+        <option value="line">Linjediagram (Line)</option>
+      </select>
+      
+      <!-- Dropdown for å velge år -->
+      <label for="yearSelect"><b> Velg år: </b></label>
+      <select id="yearSelect">
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+      </select>
+    </div>
+
+    <div class="chartCard">
+      <div class="chartBox" id="chartContainer">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+
+    <div id="checkbox-container">
+      <div>
+          <h3>Velg landsdeler:</h3>
+          <div id="regionContainer"></div>
+      </div>
+  
+      <div>
+          <h3>Velg byer:</h3>
+          <div id="cityContainer"></div>
+      </div>
+  </div>
+  
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
