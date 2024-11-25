@@ -20,7 +20,7 @@ Promise.all([
         const labels1 = Object.values(regions1); // Landsdeler
         const labels2 = Object.values(regions2); // Byer
 
-        // Populer checkboxes for landsdeler
+      
         const regionContainer = document.getElementById("regionContainer");
         labels1.forEach((region, index) => {
             const checkbox = document.createElement("input");
@@ -36,7 +36,7 @@ Promise.all([
             regionContainer.appendChild(document.createElement("br"));
         });
 
-        // Populer checkboxes for byer
+        
         const cityContainer = document.getElementById("cityContainer");
         labels2.forEach((city, index) => {
             const checkbox = document.createElement("input");
@@ -73,12 +73,12 @@ Promise.all([
             selectedRegions.forEach(index => {
                 filteredLabels.push(labels1[index]);
                 filteredValues1.push(values1[index]);
-                filteredValues2.push(null); // Ingen data for byer nullverdi
+                filteredValues2.push(null); 
             });
 
             selectedCities.forEach(index => {
                 filteredLabels.push(labels2[index]);
-                filteredValues1.push(null); // Ingen data for landsdeler nullverdi
+                filteredValues1.push(null); 
                 filteredValues2.push(values2[index]);
             });
 
@@ -128,10 +128,10 @@ Promise.all([
             return Array.from(container.querySelectorAll("input:checked")).map(checkbox => parseInt(checkbox.value));
         }
 
-        // Initialiser diagrammet med alle standardverdier
+       
         updateChart('bar', '2021', Array.from(Array(labels1.length).keys()), Array.from(Array(labels2.length).keys()));
 
-        // Event listeners for oppdatering
+        
         document.getElementById('chartTypeSelect').addEventListener('change', function () {
             const chartType = this.value;
             const year = document.getElementById('yearSelect').value;
